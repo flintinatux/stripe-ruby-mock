@@ -266,7 +266,7 @@ module StripeMock
     end
 
     def self.mock_plan(params={})
-      {
+      StripeMock::Util.rmerge({
         interval: "month",
         name: "The Basic Plan",
         amount: 2300,
@@ -276,7 +276,7 @@ module StripeMock
         livemode: false,
         interval_count: 1,
         trial_period_days: nil
-      }.merge(params)
+      }, params)
     end
 
     def self.mock_recipient(params={})

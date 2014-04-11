@@ -9,7 +9,8 @@ shared_examples 'Plan API' do
       :amount => 9900,
       :currency => 'USD',
       :interval => 1,
-      :trial_period_days => 30
+      :trial_period_days => 30,
+      :metadata => { :color => 'blue' }
     )
 
     expect(plan.id).to eq('pid_1')
@@ -19,6 +20,8 @@ shared_examples 'Plan API' do
     expect(plan.currency).to eq('USD')
     expect(plan.interval).to eq(1)
     expect(plan.trial_period_days).to eq(30)
+
+    expect(plan.metadata.color).to eq('blue')
   end
 
 
